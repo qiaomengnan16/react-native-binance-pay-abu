@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/cleverbrainz/react-native-binance-pay.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
+  s.vendored_frameworks = 'ios/Frameworks/BinancePaySDK.xcframework'
 
   s.dependency "React-Core"
 end
