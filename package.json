@@ -1,6 +1,6 @@
 {
   "name": "react-native-binance-pay-abu",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "Binance Pay SDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-binance-pay.podspec",
+    "react-native-binance-pay-abu.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -37,7 +37,7 @@
     "android"
   ],
   "repository": "https://github.com/qiaomengnan16/react-native-binance-pay-abu",
-  "author": "Tao Zhang <zhangtao820801@gmail.com> (https://github.com/cleverbrainz)",
+  "author": "qiaomengnan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/qiaomengnan16/react-native-binance-pay-abu/issues"
