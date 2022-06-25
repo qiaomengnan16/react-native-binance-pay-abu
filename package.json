@@ -1,5 +1,5 @@
 {
-  "name": "react-native-binance-pay",
+  "name": "react-native-binance-pay-abu",
   "version": "0.2.6",
   "description": "Binance Pay SDK",
   "main": "lib/commonjs/index",
@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/cleverbrainz/react-native-binance-pay",
+  "repository": "https://github.com/qiaomengnan16/react-native-binance-pay-abu",
   "author": "Tao Zhang <zhangtao820801@gmail.com> (https://github.com/cleverbrainz)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cleverbrainz/react-native-binance-pay/issues"
+    "url": "https://github.com/qiaomengnan16/react-native-binance-pay-abu/issues"
   },
-  "homepage": "https://github.com/cleverbrainz/react-native-binance-pay#readme",
+  "homepage": "https://github.com/qiaomengnan16/react-native-binance-pay-abu#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
