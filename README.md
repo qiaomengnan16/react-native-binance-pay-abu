@@ -1,48 +1,53 @@
-# react-native-binance-pay
+# react-native-binance-pay-abu
 
 React Native Package for Binance Pay from Binance SDKs
 
 ## Installation
 
 ```sh
-npm install react-native-binance-pay
+npm install react-native-binance-pay-abu
 ```
 
 ### Add dependencies
 
 #### Android dependencies
 
-1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-
-- Add `import com.reactnativebinancepay.BinancePayPackage;` to the imports at the top of the file
-- Add `new BinancePayPackage()` to the list returned by the `getPackages()` method
-
-2. Append the following lines to `android/settings.gradle`:
+1. Append the following lines to `android/settings.gradle`:
    ```
-    include ':react-native-binance-pay'
-    project(':react-native-binance-pay').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-binance-pay/android')
+    include ':react-native-binance-pay-abu'
+    project(':react-native-binance-pay-abu').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-binance-pay-abu/android')
    ```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
+2. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
    ```
-    implementation project(':react-native-binance-pay')
+    implementation project(':react-native-binance-pay-abu')
    ```
 
 #### iOS dependencies
 
-- In Progress (Coming Soon)
+1. Create Frameworks folder in iOS project root folder and copy & paste the BinancePaySDK.xcframework
+2. Add BinancePaySDK.xcframework to Frameworks, Libraries, and Embedded Content
+
 
 ## Usage
 
+- redirectScheme is the deeplink of you APP, you need this scheme to jump back from Binance APP
+- redirectScheme is required for iOS only
+
 ```js
-import BinancePay from "react-native-binance-pay";
+import BinancePay from "react-native-binance-pay-abu";
 
 // ...
 
-BinancePay.initBinancePayParam(merchantId, prepayId, timeStamp, nonceStr, certSn, sign);
-BinancePay.makePayment()
+BinancePay.payCrypto(merchantId, prepayId, timeStamp, nonceStr, certSn, sign, redirectScheme)
 .then((result) => {
-    console.log(result);
+   console.log(result);
 });
+
+BinancePay.transferCrypto(orderId, type, redirectScheme)
+.then((result) => {
+   console.log(result);
+});
+
 ```
 
 ## Contributing

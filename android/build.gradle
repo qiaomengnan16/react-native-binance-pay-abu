@@ -18,11 +18,11 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('BinancePay_compileSdkVersion', 29)
-    buildToolsVersion safeExtGet('BinancePay_buildToolsVersion', '29.0.2')
+    compileSdkVersion safeExtGet('RNBinancePay_compileSdkVersion', 29)
+    buildToolsVersion safeExtGet('RNBinancePay_buildToolsVersion', '29.0.2')
     defaultConfig {
-        minSdkVersion safeExtGet('BinancePay_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('BinancePay_targetSdkVersion', 29)
+        minSdkVersion safeExtGet('RNBinancePay_minSdkVersion', 19)
+        targetSdkVersion safeExtGet('RNBinancePay_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"
 
@@ -39,12 +39,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
     }
 }
 
@@ -63,4 +57,5 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation fileTree(include: ['*.aar'], dir: 'libs')
     implementation "androidx.cardview:cardview:1.0.0" //need add cardview dependence
+    implementation "com.android.support.constraint:constraint-layout:1.1.3"
 }

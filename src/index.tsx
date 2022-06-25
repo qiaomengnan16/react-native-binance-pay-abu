@@ -1,18 +1,53 @@
-import { NativeModules } from 'react-native';
+import {NativeModules, Platform} from 'react-native';
 
-type BinancePayType = {
+type RNBinancePayType = {
+
   multiply(a: number, b: number): Promise<number>;
-  initBinancePayParam(
+
+  payCrypto(
     merchantId: string,
     prepayId: string,
-    timeStamp: string,
-    nonceStr: string,
+    timestamp: number,
+    noncestr: string,
     certSn: string,
-    sign: string
-  ): any;
-  makePayment(): Promise<string>;
+    sign: string,
+    redirectScheme?: string
+  ): Promise<string>;
+
+  transferCrypto(
+    orderId: string,
+    type: string,
+    redirectScheme?: string
+  ): Promise<string>;
 };
 
-const { BinancePay } = NativeModules;
+const { RNBinancePay } = NativeModules;
 
-export default BinancePay as BinancePayType;
+
+const BinancePay = {
+  payCrypto(merchantId: string,
+            prepayId: string,
+            timestamp: number,
+            noncestr: string,
+            certSn: string,
+            sign: string,
+            redirectScheme?: string) {
+    if (Platform.OS === 'android') {
+      return RNBinancePay.payCrypto(merchantId, prepayId, timestamp + '', noncestr, certSn, sign)
+    } else {
+      return RNBinancePay.payCrypto(merchantId, prepayId, timestamp, noncestr, certSn, sign, redirectScheme)
+    }
+  },
+  transferCrypto(orderId: string,
+                 type: string,
+                 redirectScheme?: string) {
+    if (Platform.OS === 'android') {
+      return RNBinancePay.transferCrypto(orderId, type)
+    } else {
+      return RNBinancePay.transferCrypto(orderId, type, redirectScheme)
+    }
+  }
+}
+
+
+export default BinancePay as RNBinancePayType;
