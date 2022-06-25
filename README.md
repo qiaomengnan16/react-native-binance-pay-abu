@@ -1,3 +1,10 @@
+# change bug
+
+RNBinancePay.swift No Such Module BinancePaySDK
+
+react-native-binance-pay-abu.podspec add `s.vendored_frameworks = 'ios/Frameworks/BinancePaySDK.xcframework'` fix bug
+
+
 # react-native-binance-pay-abu
 
 React Native Package for Binance Pay from Binance SDKs
