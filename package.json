@@ -1,6 +1,6 @@
 {
   "name": "react-native-binance-pay-abu",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Binance Pay SDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
